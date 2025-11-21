@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { VerziokComponent } from "./verziok/verziok.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [VerziokComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

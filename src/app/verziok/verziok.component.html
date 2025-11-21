@@ -1,0 +1,64 @@
+<!--
+* File:Softverziok.html
+* Author: Szücs Gyöngyi
+* Copyright: 2025, Szücs Gyöngyi
+* Date: 2025-11-21
+* Web: http:
+* Licenc: MIT
+*
+*/-->
+<head>
+    <!-- CSS style to set alternate table 
+            row using color -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<h2>Szoftveres verziókezelés</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Verziószám</th>
+            <th>Kiadás dátuma</th>
+            <th>Fejlesztő csapat</th>
+            <th>Hibajavítások száma</th>
+            <th>Új funkciók száma</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(sv of szoftverVerziok; track sv.verzio) {
+            <tr>
+                <td>{{sv.verzio}}</td>
+                <td>{{sv.datum}}</td>
+                <td>{{sv.csapat}}</td>
+                <td>{{sv.hibak}}</td>
+                <td>{{sv.ujFunkciok}}</td>
+                <td>{{sv.hibak > sv.ujFunkciok ? '⚠️' : '' }}</td>
+            </tr>
+        }
+        
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td>Össz hibajavítások: </td>
+            <td>{{ossz_hiba}}</td>
+            
+            <td></td>
+        </tr>
+    </tfoot>
+</table>
